@@ -17,4 +17,6 @@ fnforge introduces a unified approach. In this standard, every function must exp
 - The **type of input** (In)
 - The **type of output** (Out)
 
-By standardizing these definitions, fnforge enables seamless interoperability across diverse environments.
+The format also specifies **bidirectional communication**, allowing for interactive or streaming exchanges between the caller and the function. 
+
+Notably, fnforge focuses on the communication contract and data structures **without necessarily specifying the transport data layer**. This allows the standard to be implemented over various protocols (like WebSockets, gRPC, HTTP/3, or even local pipes) while maintaining a consistent functional interface.
