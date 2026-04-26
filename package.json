@@ -1,6 +1,7 @@
 {
   "name": "fnforge",
   "version": "0.0.1",
+  "description": "A universal standard for functions with bidirectional communication support.",
   "module": "index.ts",
   "type": "module",
   "private": false,
