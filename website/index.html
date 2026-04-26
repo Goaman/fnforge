@@ -7,39 +7,11 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <nav>
-            <div class="logo">fnforge</div>
-            <div class="links">
-                <a href="https://github.com/Goaman/fnforge">GitHub</a>
-                <a href="https://www.npmjs.com/package/fnforge">NPM</a>
-            </div>
-        </nav>
-    </header>
-
     <main>
         <section class="hero">
-            <h1>The Universal Function Standard</h1>
-            <p class="tagline">Define once. Execute anywhere. Communicate bidirectionally.</p>
-            <div class="status-badge">Work in Progress</div>
-        </section>
-
-        <section class="content">
-            <h2>The Problem</h2>
-            <p>Traditionally, functions are fragmented across CLIs, REST APIs, and various programming languages—each defining inputs and outputs differently. This creates friction and requires constant translation.</p>
-
-            <h2>The Solution</h2>
-            <p>fnforge introduces a unified approach where every function must explicitly define its <strong>Input Type (In)</strong> and <strong>Output Type (Out)</strong>, supporting both unary and bidirectional communication without being tied to a specific transport layer.</p>
-
-            <pre><code>// The fnforge way
-export interface ForgeFunction&lt;In, Out&gt; {
-  (input: In | AsyncIterable&lt;In&gt;): Promise&lt;Out&gt; | AsyncIterable&lt;Out&gt;;
-}</code></pre>
+            <h1>fnforge</h1>
+            <p class="tagline">Work in Progress</p>
         </section>
     </main>
-
-    <footer>
-        <p>&copy; 2026 fnforge contributors. MIT Licensed.</p>
-    </footer>
 </body>
 </html>
