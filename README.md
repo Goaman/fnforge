@@ -1,5 +1,7 @@
 # fnforge
 
+> **Note**: This project is a **Work in Progress (WIP)**.
+
 fnforge is a new, universal standard for functions. It aims to provide a consistent way to define, discover, and execute functions across different platforms and programming languages.
 
 ## The Problem
