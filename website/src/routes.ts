@@ -1,6 +1,6 @@
 import { posts } from './posts';
 
-export type ArticleRoute = 'function' | 'flow';
+export type ArticleRoute = 'function' | 'flow' | 'choosing-output';
 export type Route = 'home' | 'drafts' | ArticleRoute;
 
 const basePath = import.meta.env.BASE_URL.replace(/\/+$/, '');

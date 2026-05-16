@@ -1,6 +1,7 @@
 import { createEffect, createSignal, Match, onCleanup, Switch } from 'solid-js';
 import { Header } from './components/Header';
 import { DraftPostsPage } from './pages/DraftPostsPage';
+import { ChoosingOutputPage } from './pages/ChoosingOutputPage';
 import { FlowPage } from './pages/FlowPage';
 import { FunctionPage } from './pages/FunctionPage';
 import { HomePage } from './pages/HomePage';
@@ -29,7 +30,12 @@ export function App() {
   if (path === '/' && window.location.hash.startsWith('#/')) {
     const legacyRoute = window.location.hash.replace(/^#\/?/, '');
 
-    if (legacyRoute === 'drafts' || legacyRoute === 'function' || legacyRoute === 'flow') {
+    if (
+      legacyRoute === 'drafts' ||
+      legacyRoute === 'function' ||
+      legacyRoute === 'flow' ||
+      legacyRoute === 'choosing-output'
+    ) {
       window.history.replaceState({}, '', href(legacyRoute as Route));
     }
   }
@@ -38,6 +44,9 @@ export function App() {
   }
   if (path === '/article/flow') {
     window.history.replaceState({}, '', href('flow'));
+  }
+  if (path === '/article/choosing-output') {
+    window.history.replaceState({}, '', href('choosing-output'));
   }
 
   const [route, setRoute] = createSignal(routeFromLocation());
@@ -91,6 +100,9 @@ export function App() {
         </Match>
         <Match when={route() === 'flow'}>
           <FlowPage />
+        </Match>
+        <Match when={route() === 'choosing-output'}>
+          <ChoosingOutputPage />
         </Match>
         <Match when={true}>
           <HomePage />

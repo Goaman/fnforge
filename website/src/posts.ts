@@ -22,4 +22,11 @@ export const posts: Post[] = [
     description:
       'A visual reference for how state moves into transport, crosses the server/client boundary, and updates the client view.',
   },
+  {
+    route: 'choosing-output',
+    slug: 'choosing-the-output-of-a-function',
+    title: 'Choosing the output of a function',
+    description:
+      'A note about treating function output as an explicit product surface, not only the accidental return value of implementation code.',
+  },
 ];
