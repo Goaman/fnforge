@@ -3,8 +3,36 @@ import { posts } from './posts';
 export type ArticleRoute = 'function' | 'flow';
 export type Route = 'home' | 'drafts' | ArticleRoute;
 
+const basePath = import.meta.env.BASE_URL.replace(/\/+$/, '');
+
+export function pathWithoutBase(pathname = window.location.pathname) {
+  const path = pathname.replace(/\/+$/, '') || '/';
+
+  if (!basePath || basePath === '/') {
+    return path;
+  }
+
+  if (path === basePath) {
+    return '/';
+  }
+
+  if (path.startsWith(`${basePath}/`)) {
+    return path.slice(basePath.length) || '/';
+  }
+
+  return path;
+}
+
+function withBase(path: string) {
+  if (!basePath || basePath === '/') {
+    return path;
+  }
+
+  return path === '/' ? `${basePath}/` : `${basePath}${path}`;
+}
+
 export function routeFromLocation(): Route {
-  const path = window.location.pathname.replace(/\/+$/, '') || '/';
+  const path = pathWithoutBase();
 
   if (path === '/drafts') {
     return 'drafts';
@@ -21,14 +49,14 @@ export function routeFromLocation(): Route {
 
 export function href(route: Route) {
   if (route === 'home') {
-    return '/';
+    return withBase('/');
   }
 
   if (route === 'drafts') {
-    return '/drafts';
+    return withBase('/drafts');
   }
 
   const post = posts.find((draft) => draft.route === route);
 
-  return post ? `/draft/${post.slug}` : '/';
+  return post ? withBase(`/draft/${post.slug}`) : withBase('/');
 }

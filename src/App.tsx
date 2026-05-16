@@ -4,7 +4,7 @@ import { DraftPostsPage } from './pages/DraftPostsPage';
 import { FlowPage } from './pages/FlowPage';
 import { FunctionPage } from './pages/FunctionPage';
 import { HomePage } from './pages/HomePage';
-import { href, routeFromLocation, type Route } from './routes';
+import { href, pathWithoutBase, routeFromLocation, type Route } from './routes';
 
 function highlightAnchor(hash: string, delay = 0) {
   const target = document.querySelector(hash);
@@ -24,17 +24,19 @@ function highlightAnchor(hash: string, delay = 0) {
 }
 
 export function App() {
-  if (window.location.pathname === '/' && window.location.hash.startsWith('#/')) {
+  const path = pathWithoutBase();
+
+  if (path === '/' && window.location.hash.startsWith('#/')) {
     const legacyRoute = window.location.hash.replace(/^#\/?/, '');
 
     if (legacyRoute === 'drafts' || legacyRoute === 'function' || legacyRoute === 'flow') {
       window.history.replaceState({}, '', href(legacyRoute as Route));
     }
   }
-  if (window.location.pathname === '/article/function') {
+  if (path === '/article/function') {
     window.history.replaceState({}, '', href('function'));
   }
-  if (window.location.pathname === '/article/flow') {
+  if (path === '/article/flow') {
     window.history.replaceState({}, '', href('flow'));
   }
 
