@@ -1,7 +1,7 @@
-import type { JSX } from "solid-js";
-import { ArticleIndex } from "./ArticleIndex";
-import { ArticleMenu, type ArticleMenuItem } from "./ArticleMenu";
-import type { Route } from "../routes";
+import type { JSX } from 'solid-js';
+import { ArticleIndex } from './ArticleIndex';
+import { ArticleMenu, type ArticleMenuItem } from './ArticleMenu';
+import type { Route } from '../routes';
 
 type ArticleShellProps = {
   current: Route;

@@ -1,6 +1,6 @@
-import { For } from "solid-js";
-import { posts } from "../posts";
-import { href } from "../routes";
+import { For } from 'solid-js';
+import { posts } from '../posts';
+import { href } from '../routes';
 
 export function DraftPostsPage() {
   return (

@@ -1,4 +1,4 @@
-import { For, type JSX } from "solid-js";
+import { For, type JSX } from 'solid-js';
 
 export type ArticleMenuItem = {
   href: string;
@@ -17,17 +17,17 @@ export function ArticleMenu(props: ArticleMenuProps) {
     event.stopPropagation();
     const nextUrl = `${window.location.pathname}${href}`;
 
-    window.history.pushState({}, "", nextUrl);
+    window.history.pushState({}, '', nextUrl);
     const target = document.querySelector(href);
 
-    target?.scrollIntoView({ behavior: "smooth", block: "start" });
+    target?.scrollIntoView({ behavior: 'smooth', block: 'start' });
     if (target instanceof HTMLElement) {
       window.setTimeout(() => {
-        target.classList.remove("anchor-highlight");
+        target.classList.remove('anchor-highlight');
         void target.offsetWidth;
-        target.classList.add("anchor-highlight");
+        target.classList.add('anchor-highlight');
         window.setTimeout(() => {
-          target.classList.remove("anchor-highlight");
+          target.classList.remove('anchor-highlight');
         }, 900);
       }, 350);
     }
@@ -47,7 +47,11 @@ export function ArticleMenu(props: ArticleMenuProps) {
               </a>
               <For each={item.items}>
                 {(child) => (
-                  <a class="article-menu-child" href={sectionHref(child.href)} onClick={(event) => scrollToSection(event, child.href)}>
+                  <a
+                    class="article-menu-child"
+                    href={sectionHref(child.href)}
+                    onClick={(event) => scrollToSection(event, child.href)}
+                  >
                     {child.label}
                   </a>
                 )}

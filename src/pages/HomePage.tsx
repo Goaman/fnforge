@@ -1,5 +1,5 @@
-import { Wordmark } from "../components/Wordmark";
-import { href } from "../routes";
+import { Wordmark } from '../components/Wordmark';
+import { href } from '../routes';
 
 export function HomePage() {
   return (
@@ -11,7 +11,7 @@ export function HomePage() {
       </section>
 
       <div class="actions">
-        <a class="button primary" href={href("drafts")}>
+        <a class="button primary" href={href('drafts')}>
           Read draft posts
         </a>
       </div>

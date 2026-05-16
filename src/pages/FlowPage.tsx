@@ -1,9 +1,9 @@
-import { ArticlePage } from "../components/ArticlePage";
-import type { ArticleMenuItem } from "../components/ArticleMenu";
+import { ArticlePage } from '../components/ArticlePage';
+import type { ArticleMenuItem } from '../components/ArticleMenu';
 
 const articleMenuItems: ArticleMenuItem[] = [
-  { href: "#diagram", label: "Diagram" },
-  { href: "#reading-the-flow", label: "Reading the flow" },
+  { href: '#diagram', label: 'Diagram' },
+  { href: '#reading-the-flow', label: 'Reading the flow' },
 ];
 
 export function FlowPage() {
@@ -19,12 +19,20 @@ export function FlowPage() {
         <svg viewBox="0 0 960 620" role="img" aria-labelledby="svg-title svg-desc">
           <title id="svg-title">Server client state and transport diagram</title>
           <desc id="svg-desc">
-            Server state sits above server transport. A horizontal boundary divides state from transport. A dotted vertical boundary
-            separates server from client. Transport flows bidirectionally between server and client transport. Client state can change
-            locally through client transport and also receive server updates.
+            Server state sits above server transport. A horizontal boundary divides state from transport. A dotted
+            vertical boundary separates server from client. Transport flows bidirectionally between server and client
+            transport. Client state can change locally through client transport and also receive server updates.
           </desc>
           <defs>
-            <marker id="arrowTip" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+            <marker
+              id="arrowTip"
+              viewBox="0 0 10 10"
+              refX="8"
+              refY="5"
+              markerWidth="7"
+              markerHeight="7"
+              orient="auto-start-reverse"
+            >
               <path class="arrow-head" d="M 1 1 L 8 5 L 1 9" />
             </marker>
           </defs>
@@ -95,12 +103,12 @@ export function FlowPage() {
       </section>
       <h2 id="reading-the-flow">Reading the flow</h2>
       <p>
-        Server state is the authoritative source. Server transport derives a payload from that state, moves it across the boundary, and
-        lets client transport update the client view.
+        Server state is the authoritative source. Server transport derives a payload from that state, moves it across
+        the boundary, and lets client transport update the client view.
       </p>
       <p>
-        The client can also change local state through its transport layer. When the server sends new information, the client transport
-        applies it back into the hydrated view.
+        The client can also change local state through its transport layer. When the server sends new information, the
+        client transport applies it back into the hydrated view.
       </p>
     </ArticlePage>
   );

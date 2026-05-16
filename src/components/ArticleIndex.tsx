@@ -1,6 +1,6 @@
-import { For } from "solid-js";
-import { posts } from "../posts";
-import { href, type Route } from "../routes";
+import { For } from 'solid-js';
+import { posts } from '../posts';
+import { href, type Route } from '../routes';
 
 type ArticleIndexProps = {
   current: Route;
