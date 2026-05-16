@@ -1,0 +1,27 @@
+{
+  "name": "fnforge",
+  "version": "0.0.1",
+  "description": "A universal standard for functions with bidirectional communication support.",
+  "license": "MIT",
+  "module": "index.ts",
+  "type": "module",
+  "private": false,
+  "scripts": {
+    "website:dev": "vite --host 0.0.0.0 website",
+    "website:build": "vite build website && cp dist/index.html dist/404.html",
+    "website:preview": "vite preview website --host 0.0.0.0 --outDir ../dist"
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "typescript": "^5",
+    "vite": "^7.2.7",
+    "vite-plugin-solid": "^2.11.8"
+  },
+  "dependencies": {
+    "highlight.js": "^11.11.1",
+    "solid-js": "^1.9.10"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  }
+}
